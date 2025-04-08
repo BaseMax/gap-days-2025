@@ -1,5 +1,9 @@
+% 
+% Seyyed Ali Mohammadiyeh
 % pdflatex.exe -synctex=1 -interaction=nonstopmode -shell-escape "gap-days-2025".tex
 % pdflatex -synctex=1 -interaction=nonstopmode -shell-escape "gap-days-2025".tex
+% 
+
 \PassOptionsToPackage{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}{hyperref}
 \documentclass{beamer}
 
@@ -48,10 +52,10 @@ University of Kashan, Kashan 87317-53153, I. R. Iran\\
   \titlepage
 \end{frame}
 
-\begin{frame}
-  \frametitle{Table of Contents}
-  \tableofcontents
-\end{frame}
+% \begin{frame}
+%   \frametitle{Table of Contents}
+%   \tableofcontents
+% \end{frame}
 
 \section{What is a Latin Square?}
 
@@ -79,34 +83,37 @@ Here is a Latin square of order 3:
 Each number appears once per row and once per column.
 \end{frame}
 
-\begin{frame}
-\frametitle{More Examples (Order 4)}
-\[
-\begin{bmatrix}
-1 & 2 & 3 & 4 \\
-2 & 3 & 4 & 1 \\
-3 & 4 & 1 & 2 \\
-4 & 1 & 2 & 3 \\
-\end{bmatrix}
-\quad
-\begin{bmatrix}
-1 & 2 & 3 & 4 \\
-3 & 4 & 1 & 2 \\
-4 & 1 & 2 & 3 \\
-2 & 3 & 4 & 1 \\
-\end{bmatrix}
-\]
-\end{frame}
+% \begin{frame}
+% \frametitle{More Examples (Order 4)}
+% \[
+% \begin{bmatrix}
+% 1 & 2 & 3 & 4 \\
+% 2 & 3 & 4 & 1 \\
+% 3 & 4 & 1 & 2 \\
+% 4 & 1 & 2 & 3 \\
+% \end{bmatrix}
+% \quad
+% \begin{bmatrix}
+% 1 & 2 & 3 & 4 \\
+% 3 & 4 & 1 & 2 \\
+% 4 & 1 & 2 & 3 \\
+% 2 & 3 & 4 & 1 \\
+% \end{bmatrix}
+% \]
+% \end{frame}
 
 \begin{frame}
 \frametitle{Applications}
 Latin squares appear in:
 \begin{itemize}
-  \item \textbf{Statistics:} Experimental design.
+  \item \textbf{Statistics:} Experimental design to ensure that treatments are balanced across different conditions, allowing for a more reliable analysis of experimental results.
   \item \textbf{Cryptography:} Encryption algorithms.
-  \item \textbf{Puzzle design:} Sudoku is a partial Latin square!
+  \item \textbf{Game and Puzzle design:} Sudoku is a partial Latin square!
   \item \textbf{Combinatorics:} Designs, finite geometry, etc.
 \end{itemize}
+
+Latin squares are related to group theory and quasigroups.
+
 \end{frame}
 
 \begin{frame}
@@ -114,8 +121,25 @@ Latin squares appear in:
 \begin{itemize}
   \item Studied by \textbf{Leonhard Euler} in the 18th century.
   \item Euler's conjecture on orthogonal Latin squares was famous (later disproven for $n=6$).
-  \item Latin squares are related to group theory and quasigroups.
+  \item The Korean mathematician Choi Seok-jeong was the first to publish an example of Latin squares of order nine, in order to construct a magic square in 1700, predating Leonhard Euler by 67 years.
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Euler's Contribution}
+The concept of "Latin square" was inspired by mathematical papers by Leonhard Euler (1707–1783), who used Latin characters as symbols, but any set of symbols can be used: the integer sequence 1, 2, 3 can be replaced by the alphabetic sequence A, B, C.
+Euler began the general theory of Latin squares.
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=0.5\textwidth]{img12}
+Choi Seok-jeong was a Korean politician and mathematician who was the first to find orthogonal Latin squares. He constructed magic squares and invented the Hexagonal Tortoise Problem.
+
+Here is Choi Seok-jeong's orthogonal Latin squares of order 9 in modern notation:
+\includegraphics[width=0.5\textwidth]{img10}
+
+From the orthogonal Latin squares, he was able to construct a magic square of order 9.
+\includegraphics[width=0.5\textwidth]{img11}
 \end{frame}
 
 \begin{frame}
@@ -124,6 +148,7 @@ Latin squares appear in:
   \item \textbf{Order:} The size $n$ of the square.
   \item \textbf{Symbol set:} The $n$ elements used (commonly $1$ to $n$).
   \item \textbf{Orthogonal Latin squares (OLS):} Two Latin squares where each ordered pair occurs once.
+  \item \textbf{Mutually orthogonal Latin squares (MOLS):} ...
 \end{itemize}
 \end{frame}
 
@@ -149,7 +174,14 @@ Exact formulas exist only for small $n$.
   \item Sudoku = Latin square + $3\times3$ box conditions.
 \end{itemize}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{img1}
+\includegraphics[width=0.5\textwidth]{img8}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Latin Squares in Sudoku}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{img9}
 \end{center}
 \end{frame}
 
@@ -160,7 +192,13 @@ Exact formulas exist only for small $n$.
   \item A Latin square is a grid filled with \( n \) rows and \( n \) columns, where each number appears exactly once in each row and column.
   \item \textbf{Order 1:} A 1x1 Latin square is trivially possible, as it just contains one element.\\
     Example: \(\begin{bmatrix} 1 \end{bmatrix}\)
-  \item \textbf{Order 2:} A 2x2 Latin square is not possible. The problem is that there’s no way to place two numbers without repeating them in each row and column.
+  \item \textbf{Order 2:} A 2x2 Latin square is possible. For example:
+  \[
+  \begin{bmatrix}
+  1 & 2 \\
+  2 & 1
+  \end{bmatrix}
+  \]
   \item \textbf{Order 3:} A 3x3 Latin square is the smallest non-trivial Latin square and is possible.
 \end{itemize}
 \end{frame}
@@ -169,61 +207,64 @@ Exact formulas exist only for small $n$.
 \begin{frame}
 \frametitle{Latin Squares of Order 1}
 The only Latin square of order 1 is:
-\[
-\begin{bmatrix}
-1
-\end{bmatrix}
+\[ 
+\begin{bmatrix} 
+1 
+\end{bmatrix} 
 \]
 \end{frame}
 
 \section{All Latin Squares of Order 2}
 \begin{frame}
 \frametitle{Latin Squares of Order 2}
-It is impossible to create a Latin square of order 2, as no arrangement satisfies the row and column constraints.
+There are two Latin squares of order 2:
+\[
+\begin{bmatrix}
+1 & 2 \\
+2 & 1
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+2 & 1 \\
+1 & 2
+\end{bmatrix}
+\]
+These two are isotopically equivalent and represent the cyclic group \( \mathbb{Z}/2\mathbb{Z} \).
 \end{frame}
 
 \section{All Latin Squares of Order 3}
 \begin{frame}
 \frametitle{Latin Squares of Order 3}
-There are 12 Latin squares of order 3. They are:
-\[
-\begin{bmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
-3 & 1 & 2
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 & 3 & 2 \\
-2 & 1 & 3 \\
-3 & 2 & 1
-\end{bmatrix},
+There are 12 Latin squares of order 3. One example is:
+\[ 
+\begin{bmatrix} 
+1 & 2 & 3 \\ 
+2 & 3 & 1 \\ 
+3 & 1 & 2 
+\end{bmatrix}
 \]
-and 10 more.\\
-(You can display these squares across multiple slides if necessary.)
+This represents the cyclic group \( \mathbb{Z}/3\mathbb{Z} \).
 \end{frame}
 
 \section{All Latin Squares of Order 4}
 \begin{frame}
 \frametitle{Latin Squares of Order 4}
-There are 576 Latin squares of order 4. Due to their large number, only a few are shown here:
+There are 576 Latin squares of order 4. Here are two examples:
 \[
 \begin{bmatrix}
 1 & 2 & 3 & 4 \\
 2 & 3 & 4 & 1 \\
 3 & 4 & 1 & 2 \\
 4 & 1 & 2 & 3
-\end{bmatrix},
+\end{bmatrix}
 \quad
 \begin{bmatrix}
 1 & 2 & 4 & 3 \\
 2 & 3 & 1 & 4 \\
 3 & 4 & 2 & 1 \\
 4 & 1 & 3 & 2
-\end{bmatrix},
+\end{bmatrix}
 \]
-and 574 more.\\
-(You can display these squares across multiple slides if necessary.)
 \end{frame}
 
 \section{All Latin Squares of Order 5}
@@ -251,13 +292,6 @@ and 161278 more.\\
 (You can display these squares across multiple slides if necessary.)
 \end{frame}
 
-Trivial Case:
-A 1x1 square is considered trivial because it only contains one cell, and any symbol can be placed there without violating the Latin square property (each symbol appears only once in each row and column).
-Non-Trivial:
-A Latin square is non-trivial if it has more than one row and column, and each symbol appears exactly once in each row and column.
-Smallest Non-Trivial Order:
-The smallest order for a non-trivial Latin square is 3, resulting in a 3x3 square.
-
 \begin{frame}
 \frametitle{Construction Methods}
 Several techniques:
@@ -278,7 +312,39 @@ Several techniques:
 Next, we'll look at how the GAP package works with Latin squares.
 \end{frame}
 
-\section{Introduction}
+\begin{frame}
+\frametitle{Reduced Latin Squares and Normalized Latin Squares}
+Latin squares are also sometimes called "reduced" or "normalized" Latin squares when the first row and first column are in natural order. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Magic square}
+...
+\end{frame}
+
+\begin{frame}
+\frametitle{Trivial Case}
+A 1x1 square is considered trivial because it only contains one cell, and any symbol can be placed there without violating the Latin square property (each symbol appears only once in each row and column).
+\end{frame}
+
+\begin{frame}
+\frametitle{Non-Trivial}
+A Latin square is non-trivial if it has more than one row and column, and each symbol appears exactly once in each row and column.
+\end{frame}
+
+\begin{frame}
+\frametitle{Smallest Non-Trivial Order}
+The smallest order for a non-trivial Latin square is 3, resulting in a 3x3 square.
+\end{frame}
+
+\begin{frame}
+\frametitle{Balanced Latin Square}
+Balanced Latin Squares are special cases of latin square that remove immediate carry-over effects: A condition will precede another exactly once (or twice, if the number of conditions is odd).
+
+The balanced latin square generator proposed and mathematically proved by James V. Bradley in "Complete Counterbalancing of Immediate Sequential Effects in a Latin Square Design".
+\end{frame}
+
+\section{latinsquare Package Introduction}
 \begin{frame}
 \frametitle{Introduction}
 This package provides functions to generate and count Latin squares using GAP. It offers:
@@ -408,4 +474,14 @@ You should see a confirmation message.
 Thanks to the GAP community and contributors who supported this work!
 \end{frame}
 
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\begin{thebibliography}{99}
+\bibitem{gap} GAP Group. GAP -- Groups, Algorithms, Programming, Version 4.11.1; 2023. \url{https://www.gap-system.org}
+\bibitem {r1} Ackoff, R. L. (1953). The design of social research. Chicago: University of Chicago Press.
+\bibitem {r2} Edwards, A. L. (1998). Experimental design. N.Y.: Addison-Wesley.
+\bibitem {r3} Keppel, G. (2006). Introduction to design and analysis. New York: NY: Worth.
+\bibitem {r4} Mason, R. L., Gunst, R. F., \& Hess, J. C. (1989). Statistical design and analysis of experiments. New York: NY: Wiley.
+\bibitem {r5} Myers, J. L,. & Well, A. D. (2003). Research design and statistical analysis. Mahwah, NJ: Erlbaum .
+\bibitem {r6} St Andrews University. (n.d.). Choi Seok-jeong. Retrieved from \url{https://mathshistory.st-andrews.ac.uk/Biographies/Choi_Seok-jeong/}
 \end{document}
