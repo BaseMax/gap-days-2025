@@ -309,16 +309,6 @@ Several techniques:
 \end{frame}
 
 \begin{frame}
-\frametitle{Recap}
-\begin{itemize}
-  \item Latin squares are $n \times n$ grids with unique symbols in each row and column.
-  \item They have many real-world applications.
-  \item Enumeration and generation are key challenges.
-\end{itemize}
-Next, we'll look at how the GAP package works with Latin squares.
-\end{frame}
-
-\begin{frame}
 \frametitle{Reduced Latin Squares and Normalized Latin Squares}
 Latin squares are also sometimes called "reduced" or "normalized" Latin squares when the first row and first column are in natural order. 
 \end{frame}
@@ -348,6 +338,16 @@ The smallest order for a non-trivial Latin square is 3, resulting in a 3x3 squar
 Balanced Latin Squares are special cases of latin square that remove immediate carry-over effects: A condition will precede another exactly once (or twice, if the number of conditions is odd).
 
 The balanced latin square generator proposed and mathematically proved by James V. Bradley in "Complete Counterbalancing of Immediate Sequential Effects in a Latin Square Design".
+\end{frame}
+
+\begin{frame}
+\frametitle{Recap}
+\begin{itemize}
+  \item Latin squares are $n \times n$ grids with unique symbols in each row and column.
+  \item They have many real-world applications.
+  \item Enumeration and generation are key challenges.
+\end{itemize}
+Next, we'll look at how the GAP package works with Latin squares.
 \end{frame}
 
 \section{latinsquare Package Introduction}
@@ -466,18 +466,19 @@ You should see a confirmation message.
 %\textbf{Author:} Seyyed Ali Mohammadiyeh
 %\end{frame}
 
+\section{Acknowledgements}
+\begin{frame}
+\frametitle{Acknowledgements}
+Thanks to the GAP community and contributors!
+% who supported this work!
+\end{frame}
+
 \section{Q\&A}
 \begin{frame}
 	\frametitle{Thank You!}
 	\centering
 	\Large Thank you so much for your attention!\\[1em]
 	\Large Any questions?
-\end{frame}
-
-\section{Acknowledgements}
-\begin{frame}
-\frametitle{Acknowledgements}
-Thanks to the GAP community and contributors who supported this work!
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -488,7 +489,7 @@ Thanks to the GAP community and contributors who supported this work!
 \bibitem {r2} Edwards, A. L. (1998). Experimental design. N.Y.: Addison-Wesley.
 \bibitem {r3} Keppel, G. (2006). Introduction to design and analysis. New York: NY: Worth.
 \bibitem {r4} Mason, R. L., Gunst, R. F., \& Hess, J. C. (1989). Statistical design and analysis of experiments. New York: NY: Wiley.
-\bibitem {r5} Myers, J. L,. & Well, A. D. (2003). Research design and statistical analysis. Mahwah, NJ: Erlbaum .
+\bibitem {r5} Myers, J. L,. \& Well, A. D. (2003). Research design and statistical analysis. Mahwah, NJ: Erlbaum.
 \bibitem {r6} St Andrews University. (n.d.). Choi Seok-jeong. Retrieved from \url{https://mathshistory.st-andrews.ac.uk/Biographies/Choi_Seok-jeong/}
 \end{thebibliography}
 \end{frame}
