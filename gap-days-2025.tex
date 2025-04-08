@@ -1,0 +1,141 @@
+\documentclass{beamer}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usetheme{Madrid}
+
+\title{LatinSquareGAP: A GAP Package for Working with Latin Squares}
+\author{Seyyed Ali Mohammadiyeh}
+\institute{GAP Days 2025}
+\date{\today}
+
+\begin{document}
+	
+	% Title Slide
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Introduction
+	\begin{frame}{What is a Latin Square?}
+		\begin{block}{Definition}
+			A \textbf{Latin square} of order $n$ is an $n \times n$ array filled with $n$ different symbols, each occurring exactly once in each row and each column.
+		\end{block}
+		\pause
+		\begin{example}
+			Example of a Latin square of order 3:
+			\[
+			\begin{bmatrix}
+				1 & 2 & 3 \\
+				3 & 1 & 2 \\
+				2 & 3 & 1
+			\end{bmatrix}
+			\]
+		\end{example}
+	\end{frame}
+	
+	% Motivation
+	\begin{frame}{Why Latin Squares?}
+		\begin{itemize}
+			\item Combinatorics and discrete mathematics
+			\item Experimental design and statistics
+			\item Algebra and group theory
+			\item Applications in computer science and cryptography
+		\end{itemize}
+	\end{frame}
+	
+	% Package Overview
+	\begin{frame}{About LatinSquareGAP Package}
+		\begin{itemize}
+			\item Developed for GAP system
+			\item Tools to generate, count, and explore Latin squares
+			\item Based on recursive backtracking algorithms
+		\end{itemize}
+	\end{frame}
+	
+	% Key Functions
+	\begin{frame}{Key Functions}
+		\begin{itemize}
+			\item \texttt{LatinRow(n, r, c)}: Completes a row under column constraints
+			\item \texttt{LatinCountRow(n, k, r, c)}: Counts completions of current row
+			\item \texttt{LatinCount(n, k)}: Counts total Latin squares of order $n$
+			\item \texttt{LatinList(n, c)}: Generates all Latin squares of order $n$
+		\end{itemize}
+	\end{frame}
+	
+	% Example Usage
+	\begin{frame}{Example: Counting Latin Squares}
+		\begin{itemize}
+			\item To count Latin squares of order 3:
+			\begin{verbatim}
+				gap> LatinCount(3, []);
+				12
+			\end{verbatim}
+			\item To generate and print all:
+			\begin{verbatim}
+				gap> L := LatinList(3, []);
+				gap> Print(L, "\n");
+			\end{verbatim}
+		\end{itemize}
+	\end{frame}
+	
+	% Random Square
+	\begin{frame}{Selecting a Random Latin Square}
+		\begin{itemize}
+			\item No built-in random generator
+			\item But you can do:
+			\begin{verbatim}
+				gap> L := LatinList(3, []);
+				gap> RandomLatin := L[ Random(Length(L)) ];
+			\end{verbatim}
+		\end{itemize}
+	\end{frame}
+	
+	% Algorithms
+	\begin{frame}{How Does It Work?}
+		\begin{itemize}
+			\item Recursive backtracking
+			\item Constraints: Unique symbols in rows and columns
+			\item Efficient traversal of solution space
+			\item Optimized for counting without generating all squares
+		\end{itemize}
+	\end{frame}
+	
+	% Installation
+	\begin{frame}{Installation and Loading}
+		\begin{block}{Installation}
+			Clone the package into GAP's \texttt{pkg} directory.
+		\end{block}
+		\begin{block}{Loading}
+			\begin{verbatim}
+				gap> LoadPackage("LatinSquareGAP");
+			\end{verbatim}
+		\end{block}
+	\end{frame}
+	
+	% License and Author
+	\begin{frame}{About the Author}
+		\begin{itemize}
+			\item \textbf{Author:} Seyyed Ali Mohammadiyeh
+			\item \textbf{License:} MIT
+			\item \textbf{GitHub:} \url{https://github.com/BaseMax/LatinSquareGAP}
+		\end{itemize}
+	\end{frame}
+	
+	% Acknowledgements
+	\begin{frame}{Acknowledgements}
+		\begin{itemize}
+			\item Thanks to GAP community
+			\item Inspired by discussions during GAP Days
+			\item Open for collaboration and contributions
+		\end{itemize}
+	\end{frame}
+	
+	% Thank You
+	\begin{frame}
+		\centering
+		\Huge Thank You! \\
+		\vspace{0.5cm}
+		Questions?
+	\end{frame}
+	
+\end{document}
