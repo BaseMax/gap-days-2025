@@ -9,3 +9,7 @@
 *.aux
 *.synctex.gz
 *.toc
+*.nav
+*.snm
+*.vrb
+*.(busy)
