@@ -1,4 +1,11 @@
 *.pdf
+
 *.rar
 *.zip
 *.tar.gz
+
+*.log
+*.out
+*.aux
+*.synctex.gz
+*.toc
