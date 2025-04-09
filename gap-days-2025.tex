@@ -497,15 +497,22 @@ This package provides functions to generate and count Latin squares using GAP. I
 \begin{itemize}
   \item \textbf{Generation of Latin squares:} Construct all Latin squares of a given order.
   \item \textbf{Counting Latin squares:} Count them without generating all explicitly.
-  \item \textbf{Random selection:} Generate all and select one at random.
+%   \item \textbf{Random selection:} Generate all and select one at random.
+More can be added as needed.
 \end{itemize}
 \end{frame}
 
 \section{Installation}
 \begin{frame}[fragile]
-\frametitle{Installation and Loading}
+\frametitle{Installation}
 \textbf{Installation:}  
 Place the package inside GAP's \texttt{pkg} directory.\\
+\includegraphics[width=1\textwidth]{img18}\\
+\end{frame}
+
+\section{Installation}
+\begin{frame}[fragile]
+\frametitle{Loading}
 \textbf{Loading:}
 \begin{lstlisting}
 gap> LoadPackage("LatinSquare");
@@ -515,30 +522,30 @@ You should see a confirmation message.
 
 \section{Functions}
 \begin{frame}[fragile]
-\frametitle{LatinList}
-\textbf{Prototype:} \texttt{LatinList(n, c)}\\
+\frametitle{}
+\textbf{Prototype:} \texttt{LatinSquareList(n, c)}\\
 \textbf{Description:} Generates all Latin squares of order \texttt{n}.
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{LatinCount}
-\textbf{Prototype:} \texttt{LatinCount(n)}\\
+\frametitle{LatinSquareCount}
+\textbf{Prototype:} \texttt{LatinSquareCount(n)}\\
 \textbf{Description:} Counts all Latin squares of order \texttt{n}, optionally using partial data.
 \begin{lstlisting}
-gap> LatinCount(3);
+gap> LatinSquareCount(3);
 12
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{LatinRow}
-\textbf{Prototype:} \texttt{LatinRow(n, r, c)}\\
+\frametitle{LatinSquareRow}
+\textbf{Prototype:} \texttt{LatinSquareRow(n, r, c)}\\
 \textbf{Description:} Computes valid completions of a row for a Latin square of order \texttt{n}.
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{LatinCountRow}
-\textbf{Prototype:} \texttt{LatinCountRow(n, k, r, c)}\\
+\frametitle{LatinSquareCountRow}
+\textbf{Prototype:} \texttt{LatinSquareCountRow(n, k, r, c)}\\
 \textbf{Description:} Recursively counts valid completions of the current row.
 \begin{itemize}
   \item \texttt{n}: Order of the square.
@@ -553,7 +560,7 @@ gap> LatinCount(3);
 \frametitle{Counting Latin Squares}
 To count the number of Latin squares of order 4:
 \begin{lstlisting}
-gap> LatinCount(4);
+gap> LatinSquareCount(4);
 \end{lstlisting}
 \end{frame}
 
@@ -561,11 +568,11 @@ gap> LatinCount(4);
 \frametitle{Generating Latin Squares}
 To generate all Latin squares of order 3:
 \begin{lstlisting}
-brk> LatinList(1);
+brk> LatinSquareList(1);
 [ [ [ 1 ] ] ]
-brk> LatinList(2);
+brk> LatinSquareList(2);
 [ [ [ 1, 2 ], [ 2, 1 ] ], [ [ 2, 1 ], [ 1, 2 ] ] ]
-brk> LatinList(3);
+brk> LatinSquareList(3);
 [ [ [ 1, 2, 3 ], [ 2, 3, 1 ], [ 3, 1, 2 ] ], [ [ 1, 2, 3 ], [ 3, 1, 2 ], [ 2, 3, 1 ] ], [ [ 1, 3, 2 ], [ 2, 1, 3 ], [ 3, 2, 1 ] ],
   [ [ 1, 3, 2 ], [ 3, 2, 1 ], [ 2, 1, 3 ] ], [ [ 2, 1, 3 ], [ 1, 3, 2 ], [ 3, 2, 1 ] ], [ [ 2, 1, 3 ], [ 3, 2, 1 ], [ 1, 3, 2 ] ],
   [ [ 2, 3, 1 ], [ 1, 2, 3 ], [ 3, 1, 2 ] ], [ [ 2, 3, 1 ], [ 3, 1, 2 ], [ 1, 2, 3 ] ], [ [ 3, 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 1 ] ],
@@ -579,9 +586,10 @@ brk> LatinList(3);
 Backtracking, a problem-solving technique in computer science, is generally considered a good and powerful approach for exploring multiple possibilities systematically and finding solutions, especially when dealing with constraints and complex problems. 
 This package uses recursive backtracking:
 \begin{itemize}
-  \item \texttt{LatinRow}: Valid row generation.
-  \item \texttt{LatinCountRow}: Counts completions via recursion.
-  \item \texttt{LatinList}: Builds full Latin squares.
+  \item \texttt{LatinSquareList}: Builds full Latin squares.
+  \item \texttt{LatinSquareCount}: Quickly counts Latin squares without saving generated squares.
+  \item \texttt{LatinSquareRow}: Valid row generation.
+  \item \texttt{LatinSquareCountRow}: Counts completions via recursion.
 \end{itemize}
 \end{frame}
 
