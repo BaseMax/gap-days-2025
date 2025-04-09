@@ -513,6 +513,20 @@ Place the package inside GAP's \texttt{pkg} directory.\\
 \includegraphics[width=1\textwidth]{img19}\\
 \end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{Installation by PackageManager}
+\textbf{Installation:}
+\begin{lstlisting}
+gap> LoadPackage("PackageManager");
+gap> InstallPackage("https://github.com/BaseMax/LatinSquareGAP");
+
+Or maybe in the future - easy and directly:
+gap> InstallPackage("LatinSquare");
+\end{lstlisting}
+\end{frame}
+
+
 \section{Installation}
 \begin{frame}[fragile]
 \frametitle{Loading}
