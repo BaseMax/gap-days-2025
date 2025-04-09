@@ -397,6 +397,11 @@ $n$ & $L(n,n)$ & Reference \\
 \end{frame}
 
 \begin{frame}
+\frametitle{Numbers of Latin Squares of Order $n=1, 2, \dots$}
+\includegraphics[width=1\textwidth]{img18}
+\end{frame}
+
+\begin{frame}
 \frametitle{Construction Methods}
 Several techniques:
 \begin{itemize}
@@ -496,15 +501,39 @@ This package provides functions to generate and count Latin squares using GAP. I
 \end{itemize}
 \end{frame}
 
+\section{Installation}
+\begin{frame}[fragile]
+\frametitle{Installation and Loading}
+\textbf{Installation:}  
+Place the package inside GAP's \texttt{pkg} directory.\\
+\textbf{Loading:}
+\begin{lstlisting}
+gap> LoadPackage("LatinSquare");
+\end{lstlisting}
+You should see a confirmation message.
+\end{frame}
+
 \section{Functions}
+\begin{frame}[fragile]
+\frametitle{LatinList}
+\textbf{Prototype:} \texttt{LatinList(n, c)}\\
+\textbf{Description:} Generates all Latin squares of order \texttt{n}.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LatinCount}
+\textbf{Prototype:} \texttt{LatinCount(n)}\\
+\textbf{Description:} Counts all Latin squares of order \texttt{n}, optionally using partial data.
+\begin{lstlisting}
+gap> LatinCount(3);
+12
+\end{lstlisting}
+\end{frame}
+
 \begin{frame}[fragile]
 \frametitle{LatinRow}
 \textbf{Prototype:} \texttt{LatinRow(n, r, c)}\\
 \textbf{Description:} Computes valid completions of a row for a Latin square of order \texttt{n}.
-\begin{lstlisting}
-gap> LatinRow(3, [[], [], []], []);
-[ [ 1, 2, 3 ], [ 1, 3, 2 ], ... ]
-\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -519,27 +548,6 @@ gap> LatinRow(3, [[], [], []], []);
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{LatinCount}
-\textbf{Prototype:} \texttt{LatinCount(n, k)}\\
-\textbf{Description:} Counts all Latin squares of order \texttt{n}, optionally using partial data.
-\begin{lstlisting}
-gap> LatinCount(3, []);
-12
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{LatinList}
-\textbf{Prototype:} \texttt{LatinList(n, c)}\\
-\textbf{Description:} Generates all Latin squares of order \texttt{n}.
-\begin{lstlisting}
-gap> L := LatinList(3, []);
-gap> Length(L);
-12
-\end{lstlisting}
-\end{frame}
-
 \section{Usage Examples}
 \begin{frame}[fragile]
 \frametitle{Counting Latin Squares}
@@ -552,46 +560,31 @@ gap> LatinCount(4, []);
 \begin{frame}[fragile]
 \frametitle{Generating Latin Squares}
 To generate all Latin squares of order 3:
-\begin{lstlisting}
-gap> L := LatinList(3, []);
-gap> Print(L, "\n");
-\end{lstlisting}
-\end{frame}
-
 \begin{frame}[fragile]
-\frametitle{Random Latin Square}
-To randomly select one:
+\frametitle{LatinList}
 \begin{lstlisting}
-gap> L := LatinList(3, []);
-gap> RandomLatin := L[ Random(Length(L)) ];
-gap> Print(RandomLatin, "\n");
+brk> LatinList(1);
+[ [ [ 1 ] ] ]
+brk> LatinList(2);
+[ [ [ 1, 2 ], [ 2, 1 ] ], [ [ 2, 1 ], [ 1, 2 ] ] ]
+brk> LatinList(3);
+[ [ [ 1, 2, 3 ], [ 2, 3, 1 ], [ 3, 1, 2 ] ], [ [ 1, 2, 3 ], [ 3, 1, 2 ], [ 2, 3, 1 ] ], [ [ 1, 3, 2 ], [ 2, 1, 3 ], [ 3, 2, 1 ] ],
+  [ [ 1, 3, 2 ], [ 3, 2, 1 ], [ 2, 1, 3 ] ], [ [ 2, 1, 3 ], [ 1, 3, 2 ], [ 3, 2, 1 ] ], [ [ 2, 1, 3 ], [ 3, 2, 1 ], [ 1, 3, 2 ] ],
+  [ [ 2, 3, 1 ], [ 1, 2, 3 ], [ 3, 1, 2 ] ], [ [ 2, 3, 1 ], [ 3, 1, 2 ], [ 1, 2, 3 ] ], [ [ 3, 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 1 ] ],
+  [ [ 3, 1, 2 ], [ 2, 3, 1 ], [ 1, 2, 3 ] ], [ [ 3, 2, 1 ], [ 1, 3, 2 ], [ 2, 1, 3 ] ], [ [ 3, 2, 1 ], [ 2, 1, 3 ], [ 1, 3, 2 ] ] ]
 \end{lstlisting}
 \end{frame}
 
 \section{Algorithm Overview}
 \begin{frame}
 \frametitle{Algorithm Overview}
-
 Backtracking, a problem-solving technique in computer science, is generally considered a good and powerful approach for exploring multiple possibilities systematically and finding solutions, especially when dealing with constraints and complex problems. 
-
 This package uses recursive backtracking:
 \begin{itemize}
   \item \texttt{LatinRow}: Valid row generation.
   \item \texttt{LatinCountRow}: Counts completions via recursion.
   \item \texttt{LatinList}: Builds full Latin squares.
 \end{itemize}
-\end{frame}
-
-\section{Installation}
-\begin{frame}[fragile]
-\frametitle{Installation and Loading}
-\textbf{Installation:}  
-Place the package inside GAP's \texttt{pkg} directory.\\
-\textbf{Loading:}
-\begin{lstlisting}
-gap> LoadPackage("LatinSquare");
-\end{lstlisting}
-You should see a confirmation message.
 \end{frame}
 
 %\section{License and Author}
