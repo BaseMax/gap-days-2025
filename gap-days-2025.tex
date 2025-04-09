@@ -379,17 +379,17 @@ $n$ & $L(n,n)$ & Reference \\
 2 & 1 & \\
 3 & 1 & \\
 4 & 4 & \\
-5 & 56 & Euler (1782), Cayley (1890), MacMahon (1915; incorrect value) \\
-6 & 9408 & Frolov (1890) and Tarry (1900) \\
-7 & 16942080 & Frolov (1890; incorrect), Norton (1939; incomplete), Sade (1948), Saxena (1951) \\
-8 & 535281401856 & Wells (1967) \\
-9 & 377597570964258816 & Bammel and Rothstein (1975) \\
-10 & 7580721483160132811489280 & McKay and Rogoyski (1995) \\
-11 & 5363937773277371298119673540771840 & McKay and Wanless (2005) \\
-12 & $1.62 \times 10^{44}$ & McKay and Rogoyski (1995) \\
-13 & $2.51 \times 10^{56}$ & McKay and Rogoyski (1995) \\
-14 & $2.33 \times 10^{70}$ & McKay and Rogoyski (1995) \\
-15 & $1.5 \times 10^{86}$ & McKay and Rogoyski (1995) \\
+5 & 56 & 1782, Euler, 1890, Cayley - 1915, MacMahon \\
+6 & 9408 & 1890, Frolov - 1900, Tarry \\
+7 & 16942080 & 1939, Norton - 1948, Sade - 1951, Saxena \\
+8 & 535281401856 & 1967, Wells \\
+9 & 377597570964258816 & 1975, Bammel and Rothstein \\
+10 & 7580721483160132811489280 & 1995, McKay and Rogoyski \\
+11 & 5363937773277371298119673540771840 & 2005, McKay and Wanless \\
+12 & $1.62 \times 10^{44}$ & 1995, McKay and Rogoyski \\
+13 & $2.51 \times 10^{56}$ & 1995, McKay and Rogoyski \\
+14 & $2.33 \times 10^{70}$ & 1995, McKay and Rogoyski \\
+15 & $1.5 \times 10^{86}$ & 1995, McKay and Rogoyski \\
 \hline
 \end{tabular}
 \caption{Numbers of Latin Squares of order $n=1, 2, \dots$.}
@@ -413,18 +413,18 @@ Latin squares are also sometimes called "reduced" or "normalized" Latin squares 
 
 \begin{frame}
 \frametitle{Magic square}
-\includegraphics[width=0.5\textwidth]{img13}
 \includegraphics[width=0.5\textwidth]{img14}
+\includegraphics[width=0.5\textwidth]{img13}
 \end{frame}
 
 \begin{frame}
-\frametitle{Albrecht Dürer's magic square}
-...
+\frametitle{Trivial Case Latin squares}
+A 1x1 square is considered trivial because it only contains one cell, and any symbol can be placed there without violating the Latin square property (each symbol appears only once in each row and column).
 \end{frame}
 
 \begin{frame}
-\frametitle{Luo Shu magic square}
-...
+\frametitle{Non-Trivial Latin squares}
+A Latin square is non-trivial if it has more than one row and column, and each symbol appears exactly once in each row and column.
 \end{frame}
 
 \begin{frame}
@@ -436,6 +436,23 @@ For example, a set of MOLS(4) is given by:
 
 And a set of MOLS(5):
 \includegraphics[width=0.5\textwidth]{img16}
+\end{frame}
+
+\begin{frame}
+\frametitle{Balanced Latin Square}
+Balanced Latin Squares are special cases of latin square that remove immediate carry-over effects: A condition will precede another exactly once (or twice, if the number of conditions is odd).
+
+The balanced latin square generator proposed and mathematically proved by James V. Bradley in "Complete Counterbalancing of Immediate Sequential Effects in a Latin Square Design".
+\end{frame}
+
+\begin{frame}
+\frametitle{Albrecht Dürer's magic square}
+...
+\end{frame}
+
+\begin{frame}
+\frametitle{Luo Shu magic square}
+...
 \end{frame}
 
 \begin{frame}
@@ -453,27 +470,10 @@ And a set of MOLS(5):
 ...
 \end{frame}
 
-\begin{frame}
-\frametitle{Trivial Case Latin squares}
-A 1x1 square is considered trivial because it only contains one cell, and any symbol can be placed there without violating the Latin square property (each symbol appears only once in each row and column).
-\end{frame}
-
-\begin{frame}
-\frametitle{Non-Trivial Latin squares}
-A Latin square is non-trivial if it has more than one row and column, and each symbol appears exactly once in each row and column.
-\end{frame}
-
 % \begin{frame}
 % \frametitle{Smallest Non-Trivial Order}
 % The smallest order for a non-trivial Latin square is 3, resulting in a 3x3 square.
 % \end{frame}
-
-\begin{frame}
-\frametitle{Balanced Latin Square}
-Balanced Latin Squares are special cases of latin square that remove immediate carry-over effects: A condition will precede another exactly once (or twice, if the number of conditions is odd).
-
-The balanced latin square generator proposed and mathematically proved by James V. Bradley in "Complete Counterbalancing of Immediate Sequential Effects in a Latin Square Design".
-\end{frame}
 
 \begin{frame}
 \frametitle{Recap}
